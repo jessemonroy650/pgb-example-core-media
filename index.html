@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class=height100percent>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>PGB Core 'Media' plugin</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="buttons.css" />
+    <style>
+    body {margin:0px;font-size:large;}
+    .hidden {visibility:collapse;display:none;}
+    .expose {visibility:visible;display:block;} /* Here for completeness only. */
+    .height100percent {height:100%} 
+    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+    .spacer {margin:0.5em;}
+    #header {margin:0;padding:0;}
+    #exitApp {margin:1em;float:right;}
+    /* app specific */
+    .uuid {font-size:small;}
+    /* app specific - background colors */
+    .r {background-color:hsl(0,25%,75%);}   /* pastel-red */
+    .g {background-color:hsl(135,25%,75%);} /* pastel-gree */
+    .b {background-color:hsl(225,25%,75%);} /* pastel-blue */
+    .a {background-color:hsl(45,25%,75%);}  /* pastel-gold */
+    .p {background-color:hsl(270,25%,75%);} /* pastel-purple */
+    </style>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+</head>
+<body onload="onLoad()" class=height100percent>
+    <div id=header class="button button-block button-large">
+        <img align=left src=favicon-48x48.png>
+        PGB Core 'Media' plugin
+        <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
+    </div>
+
+    <h3>App Version v<span id=appVersion></span></h3>
+
+    <div>Status: <span id=status>error</span></div>
+
+    <p class=spacer />
+    navigator.appCodeName: <span id=navCodeName>false</span><br>
+    navigator.appName: <span id=navName>false</span><br>
+    navigator.appVersion: <span id=navVersion>false</span><br>
+    navigator.platform:  <span id=navPlatform>false</span><br>
+    isCordovaApp: <span id=isCordovaApp>false</span><br>
+    isKnownDevice: <span id=isKnownDevice>false</span><br>
+
+    <h3>corova.device</h3>
+    <div id=deviceStuff>deviceStuff Not Loaded.</div>
+
+    <div class="copyright">
+        <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2018</span>
+    </div>
+</body>
+    <script type="text/javascript">
+    var app = {
+        version : '1.0.0',
+    }
+    // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
+    function isCordovaApp(x) {
+        return (typeof x !== "undefined");
+    }
+    //
+    function isKnownDevice(obj) {
+        var validPGDevices = [
+            'armv7',
+            'iPad',
+            'iPhone',
+            'iPod'
+        ];
+        var i = 0, result = -1, answer = false;
+        for (i = 0; i < validPGDevices.length; i++){
+            // https://www.w3schools.com/jsref/jsref_search.asp
+            result = obj.search(validPGDevices[i]);
+            if (result != -1) {
+                answer = validPGDevices[i]; break;
+            }
+        }
+
+        return answer;
+    }
+    //
+    function deviceStuff() {
+        var deviceStuff = "" +
+        "<p class=r /><b>device.cordova:</b> "       + device.cordova +
+        "<p class=g /><b>device.model:</b> "         + device.model +
+        "<p class=b /><b>device.platform:</b> "      + device.platform +
+        "<p class=a /><b>device.uuid:</b> "          + device.uuid +
+        "<p class=p /><b>device.version:</b> "       + device.version +
+        "<p class=r /><b>device.manufacturer:</b> "  + device.manufacturer +
+        "<p class=g /><b>device.isVirtual:</b> "     + device.isVirtual +
+        "<p class=b /><b>device.serial:</b> "        + device.serial;
+ 
+        document.getElementById('deviceStuff').innerHTML = deviceStuff;
+    }
+    //
+    function onLoad() {
+        alert("body loaded.");
+        onDeviceReady();
+    }
+    //
+    function onDOMContentLoaded() {
+        document.getElementById('navCodeName').innerHTML = navigator.appCodeName;
+        document.getElementById('navName').innerHTML     = navigator.appName;
+        document.getElementById('navVersion').innerHTML  = navigator.appVersion;
+        document.getElementById('navPlatform').innerHTML = navigator.platform;
+    }
+    //
+    function onDeviceReady() {
+        alert("device ready.");
+        document.getElementById('isCordovaApp').innerHTML  = isCordovaApp(window.cordova);
+        document.getElementById('isKnownDevice').innerHTML = isKnownDevice(navigator.platform);
+        document.getElementById('appVersion').innerHTML    = app.version;
+        if (isCordovaApp(window.cordova)) {
+            deviceStuff();
+            //
+            // Play some sound
+            //
+            var my_media = new Media("fanfare3.ogg", 
+                    function() {document.getElementById('status').innerHTML = "success"; }, 
+                    function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; }
+            );
+            my_media.play();
+            document.getElementById('status').innerHTML = "playing => " + "fanfare3.ogg";
+        }
+    }
+    // The 'DOMContentLoaded' event fires before the 'deviceready'
+    document.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);
+    // Wait for PhoneGap to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+    </script>
+</html>
+
+
+
