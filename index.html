@@ -131,7 +131,19 @@
 
             //return;
             //var my_media = new Media("fanfare3.ogg", function() {document.getElementById('status').innerHTML = "success"; }, function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; } );
-            var my_media = new Media("fanfare3.ogg");
+            var my_media = {};
+            try {
+                my_media = new Media("fanfare3.ogg");
+            } catch (e) {
+                junky = e instanceof ReferenceError;
+                junky = junky  + "<br>" + e.message + "<br>";
+                junky = junky + e.name + "<br>";
+                junky = junky + e.fileName + "<br>";
+                junky = junky + e.lineNumber + "<br>";
+                junky = junky + e.columnNumber + "<br>";
+                junky = junky + e.stack + "<br>";
+                document.getElementById('status2').innerHTML = junky
+            }
             document.getElementById('status2').innerHTML = typeof my_media;
             document.getElementById('status').innerHTML = "loaded";
             my_media.play();
