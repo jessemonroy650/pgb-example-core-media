@@ -135,8 +135,8 @@
             try {
                 my_media = new Media("fanfare3.ogg");
             } catch (e) {
-                junky = e instanceof ReferenceError;
-                junky = junky  + "<br>" + e.message + "<br>";
+                //junky = e instanceof ReferenceError;
+                junky = e.message + "<br>";
                 junky = junky + e.name + "<br>";
                 junky = junky + e.fileName + "<br>";
                 junky = junky + e.lineNumber + "<br>";
