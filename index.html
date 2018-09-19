@@ -19,7 +19,7 @@
     #header {margin:0;padding:0;}
     #exitApp {margin:1em;float:right;}
     /* app specific */
-    .uuid {font-size:small;}
+    #uuid {font-size:small;}
     /* app specific - background colors */
     .r {background-color:hsl(0,25%,75%);}   /* pastel-red */
     .g {background-color:hsl(135,25%,75%);} /* pastel-gree */
@@ -38,7 +38,11 @@
 
     <h3>App Version v<span id=appVersion></span></h3>
 
-    <div>Status: <span id=status>status unknown</span></div>
+    <div>
+        <b>Status:</b> <span id=status>status unknown</span>
+        <b>Status1:</b> <span id=status1>status unknown</span>
+        <b>Status2:</b> <span id=status2>status unknown</span>
+    </div>
 
     <b>navigator.appCodeName:</b> <span id=navCodeName>false</span><br>
     <b>navigator.appName:</b> <span id=navName>false</span><br>
@@ -48,7 +52,7 @@
     <b>isKnownDevice:</b> <span id=isKnownDevice>false</span><br>
 
     <h3>corova.device</h3>
-    <div id=deviceStuff>cordova.device Not Loaded.</div>
+    <div id=deviceStuff>cordova.device NOT LOADED</div>
 
     <div class="copyright">
         <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2018</span>
@@ -87,7 +91,7 @@
         "<p class=r /><b>device.cordova:</b> "       + device.cordova +
         "<p class=g /><b>device.model:</b> "         + device.model +
         "<p class=b /><b>device.platform:</b> "      + device.platform +
-        "<p class=a /><b>device.uuid:</b> "          + device.uuid +
+        "<p class=a id=uuid /><b>device.uuid:</b> "          + device.uuid +
         "<p class=p /><b>device.version:</b> "       + device.version +
         "<p class=r /><b>device.manufacturer:</b> "  + device.manufacturer +
         "<p class=g /><b>device.isVirtual:</b> "     + device.isVirtual +
@@ -119,7 +123,8 @@
             // Play some sound
             //
             document.getElementById('status').innerHTML = "loading";
-            document.getElementById('status').innerHTML = Media;
+            document.getElementById('status1').innerHTML = typeof Media;
+            document.getElementById('status2').innerHTML = Object.is(Media, Media);
 
             return;
             var my_media = new Media("fanfare3.ogg", 
