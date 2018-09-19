@@ -95,6 +95,7 @@
     //
     function onLoad() {
         alert("body loaded.");
+        // onDeviceReady();
     }
     //
     function onDOMContentLoaded() {
@@ -119,6 +120,7 @@
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; }
             );
+            document.getElementById('status').innerHTML = "loaded";
             my_media.play();
             document.getElementById('status').innerHTML = "playing => " + "fanfare3.ogg";
         }
@@ -129,6 +131,3 @@
     document.addEventListener("deviceready", onDeviceReady, false);
     </script>
 </html>
-
-
-
