@@ -34,7 +34,7 @@
 
     <h3>App Version v<span id=appVersion></span></h3>
 
-    <div>Status: <span id=status>error</span></div>
+    <div>Status: <span id=status>unknown error</span></div>
 
     <p class=spacer />
     navigator.appCodeName: <span id=navCodeName>false</span><br>
@@ -115,6 +115,7 @@
             //
             // Play some sound
             //
+            document.getElementById('status').innerHTML = "loading";
             var my_media = new Media("fanfare3.ogg", 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; }
