@@ -38,18 +38,17 @@
 
     <h3>App Version v<span id=appVersion></span></h3>
 
-    <div>Status: <span id=status>unknown error</span></div>
+    <div>Status: <span id=status>status unknown</span></div>
 
-    <p class=spacer />
-    navigator.appCodeName: <span id=navCodeName>false</span><br>
-    navigator.appName: <span id=navName>false</span><br>
-    navigator.appVersion: <span id=navVersion>false</span><br>
-    navigator.platform:  <span id=navPlatform>false</span><br>
-    isCordovaApp: <span id=isCordovaApp>false</span><br>
-    isKnownDevice: <span id=isKnownDevice>false</span><br>
+    <b>navigator.appCodeName:</b> <span id=navCodeName>false</span><br>
+    <b>navigator.appName:</b> <span id=navName>false</span><br>
+    <b>navigator.appVersion:</b> <span id=navVersion>false</span><br>
+    <b>navigator.platform:</b>  <span id=navPlatform>false</span><br>
+    <b>isCordovaApp:</b> <span id=isCordovaApp>false</span><br>
+    <b>isKnownDevice:</b> <span id=isKnownDevice>false</span><br>
 
     <h3>corova.device</h3>
-    <div id=deviceStuff>deviceStuff Not Loaded.</div>
+    <div id=deviceStuff>cordova.device Not Loaded.</div>
 
     <div class="copyright">
         <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2018</span>
@@ -121,6 +120,8 @@
             //
             document.getElementById('status').innerHTML = "loading";
             document.getElementById('status').innerHTML = Media;
+
+            return;
             var my_media = new Media("fanfare3.ogg", 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; }
