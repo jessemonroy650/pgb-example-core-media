@@ -116,6 +116,7 @@
             // Play some sound
             //
             document.getElementById('status').innerHTML = "loading";
+            document.getElementById('status').innerHTML = Media;
             var my_media = new Media("fanfare3.ogg", 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; }
