@@ -39,11 +39,13 @@
     <h3>App Version v<span id=appVersion></span></h3>
 
     <div>
-        <b>Status:</b> <span id=status>status unknown</span>
-        <b>Status1:</b> <span id=status1>status unknown</span>
-        <b>Status2:</b> <span id=status2>status unknown</span>
+        <b>Status0:</b> <span id=status0>status0 unknown</span><br>
+        <b>Status1:</b> <span id=status1>status1 unknown</span><br>
+        <b>Status2:</b> <span id=status2>status2 unknown</span><br>
+        <b>Status3:</b> <span id=status3>status3 unknown</span><br>
     </div>
 
+    <p class=spacer />
     <b>navigator.appCodeName:</b> <span id=navCodeName>false</span><br>
     <b>navigator.appName:</b> <span id=navName>false</span><br>
     <b>navigator.appVersion:</b> <span id=navVersion>false</span><br>
@@ -122,9 +124,10 @@
             //
             // Play some sound
             //
-            document.getElementById('status').innerHTML = "loading";
+            document.getElementById('status0').innerHTML = "loading";
             document.getElementById('status1').innerHTML = typeof Media;
             document.getElementById('status2').innerHTML = Object.is(Media, Media);
+            document.getElementById('status3').innerHTML = auto instanceof Media;
 
             return;
             var my_media = new Media("fanfare3.ogg", 
