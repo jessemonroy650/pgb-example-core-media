@@ -19,6 +19,6 @@
 
         <!-- PLUGINS PLUGINS -->
         <!-- device required so we can detect if we are using iOS -->
-        <plugin name="cordova-plugin-media" spec="~2.4.0" />
+        <plugin name="cordova-plugin-media" spec="~3.0.1" />
 
     </widget>
