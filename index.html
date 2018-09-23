@@ -134,7 +134,7 @@
             try {
                 my_media = new Media('ice_cream_truck.wav', 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
-                    function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; },
+                    function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + JSON.stringify(err); },
                     function(status) {document.getElementById('status').innerHTML = status; } );
             } catch (e) {
                 //junky = e instanceof ReferenceError;
