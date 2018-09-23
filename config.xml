@@ -6,7 +6,7 @@
         versionCode = "10" >
         <!-- versionCode is optional and Android only -->
         <!-- https://build.phonegap.com/current-support -->
-        <preference name="phonegap-version" value="cli-6.1.0" />
+        <preference name="phonegap-version" value="cli-6.4.0" />
 
         <name>PGB Example Core Media</name>
         <description>PGB Example Core using the Cordova 'Media' plugin</description>
