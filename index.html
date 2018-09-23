@@ -43,6 +43,7 @@
         <b>Status1:</b> <span id=status1>status1 unknown</span><br>
         <b>Status2:</b> <span id=status2>status2 unknown</span><br>
         <b>Status3:</b> <span id=status3>status3 unknown</span><br>
+        <b>Status3:</b> <span id=status4>status4 unknown</span><br>
     </div>
 
     <p class=spacer />
@@ -127,7 +128,6 @@
             document.getElementById('status0').innerHTML = "loading";
             document.getElementById('status1').innerHTML = typeof Media;
             document.getElementById('status2').innerHTML = Object.is(Media, Media);
-            document.getElementById('status3').innerHTML = auto instanceof Media;
 
             //return;
             try {
@@ -142,10 +142,9 @@
                 junky = junky + e.stack + "<br>";
                 document.getElementById('status2').innerHTML = junky
             }
-            //document.getElementById('status2').innerHTML = typeof my_media;
-            //document.getElementById('status').innerHTML = "loaded";
+            document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
-            document.getElementById('status').innerHTML = "playing => " + "fanfare3.ogg";
+            document.getElementById('status4').innerHTML = "playing => " + "fanfare3.ogg";
         }
     }
     // The 'DOMContentLoaded' event fires before the 'deviceready'
