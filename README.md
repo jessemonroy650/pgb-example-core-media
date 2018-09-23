@@ -13,5 +13,5 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 
 Compatibility issues within Android require 
 
-    &lt;preference name="phonegap-version" value="cli-7.1.0" /&gt;
+    <preference name="phonegap-version" value="cli-7.1.0" />
 
