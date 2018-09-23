@@ -12,5 +12,5 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 ## GOTCHA
 
 Compatibility issues within Android require 
-<preference name="phonegap-version" value="cli-7.1.0" />
+    &lt;preference name="phonegap-version" value="cli-7.1.0" /&gt;
 

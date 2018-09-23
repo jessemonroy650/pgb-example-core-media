@@ -132,7 +132,7 @@
 
             //return;
             try {
-                my_media = new Media('http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3', 
+                my_media = new Media('Beethoven_12_Variation.mp3', 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; },
                     function(status) {document.getElementById('status').innerHTML = status; } );
@@ -148,7 +148,7 @@
             }
             document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
-            document.getElementById('status4').innerHTML = "playing => " + 'http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3';
+            document.getElementById('status4').innerHTML = "playing => " + 'Beethoven_12_Variation.mp3';
         }
     }
     // The 'DOMContentLoaded' event fires before the 'deviceready'
