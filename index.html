@@ -131,7 +131,10 @@
 
             //return;
             try {
-                my_media = new Media("fanfare3.ogg", function() {document.getElementById('status').innerHTML = "success"; }, function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; } );
+                my_media = new Media("fanfare3.ogg", 
+                    function() {document.getElementById('status').innerHTML = "success"; }, 
+                    function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + err; },
+                    function(status) {document.getElementById('status').innerHTML = status; } );
             } catch (e) {
                 //junky = e instanceof ReferenceError;
                 junky = e.message + "<br>";
