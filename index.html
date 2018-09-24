@@ -67,6 +67,22 @@
     </div>
 </body>
     <script type="text/javascript">
+
+function readFile(fileEntry) {
+ 
+    fileEntry.file(function (file) {
+        var reader = new FileReader();
+ 
+        reader.onloadend = function() {
+            document.getElementById('status0').innerHTML = "Successful file read: " + this.result;
+        };
+ 
+    }, alert('onErrorReadFile'));
+}
+
+
+
+
     var app = {
         version : '1.0.0',
     }
@@ -155,6 +171,8 @@
                 junky = junky + e.stack + "<br>";
                 document.getElementById('status2').innerHTML = junky
             }
+
+            readFile(audioFile);
 
             document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
