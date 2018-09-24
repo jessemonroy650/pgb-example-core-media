@@ -40,6 +40,7 @@
 
     <div>
         <b>My Directory:</b> <span id=myDirectory>directory unknown</span><br>
+        <b>My Directory:</b> <span id=myDirectory2>directory2 unknown</span><br>
     </div>
 
     <div>
@@ -121,11 +122,15 @@
     }
     //
     function onDeviceReady() {
+        var audioFile = "fanfare3.ogg"; 
+        // 'ice_cream_truck.wav';
+
         alert("device ready.");
         document.getElementById('isCordovaApp').innerHTML  = isCordovaApp(window.cordova);
         document.getElementById('isKnownDevice').innerHTML = isKnownDevice(navigator.platform);
         document.getElementById('appVersion').innerHTML    = app.version;
-        document.getElementById('myDirectory').innerHTML    = cordova.file.applicationDirectory;
+        document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
+        document.getElementById('myDirectory2').innerHTML   = window.resolveLocalFileSystemURL();
 
         if (isCordovaApp(window.cordova)) {
             deviceStuff();
@@ -138,7 +143,7 @@
 
             //return;
             try {
-                my_media = new Media( cordova.file.applicationDirectory + 'ice_cream_truck.wav', 
+                my_media = new Media( cordova.file.applicationDirectory + audioFile, 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + JSON.stringify(err); },
                     function(status) {document.getElementById('status').innerHTML = status; } );
@@ -152,9 +157,10 @@
                 junky = junky + e.stack + "<br>";
                 document.getElementById('status2').innerHTML = junky
             }
+
             document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
-            document.getElementById('status4').innerHTML = "playing => " + cordova.file.applicationDirectory + 'ice_cream_truck.wav';
+            document.getElementById('status4').innerHTML = "playing => " + cordova.file.applicationDirectory + audioFile;
         }
     }
     // The 'DOMContentLoaded' event fires before the 'deviceready'
