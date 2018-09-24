@@ -172,7 +172,7 @@ function readFile(fileEntry) {
                 document.getElementById('status2').innerHTML = junky
             }
 
-            readFile(audioFile);
+            readFile(cordova.file.applicationDirectory + audioFile);
 
             document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
