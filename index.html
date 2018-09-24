@@ -40,7 +40,6 @@
 
     <div>
         <b>My Directory:</b> <span id=myDirectory>directory unknown</span><br>
-        <b>My Directory:</b> <span id=myDirectory2>directory2 unknown</span><br>
     </div>
 
     <div>
@@ -130,7 +129,6 @@
         document.getElementById('isKnownDevice').innerHTML = isKnownDevice(navigator.platform);
         document.getElementById('appVersion').innerHTML    = app.version;
         document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
-        document.getElementById('myDirectory2').innerHTML   = window.resolveLocalFileSystemURL();
 
         if (isCordovaApp(window.cordova)) {
             deviceStuff();
