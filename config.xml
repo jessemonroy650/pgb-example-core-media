@@ -24,4 +24,5 @@
         <plugin name="cordova-plugin-media" spec="~5.0.2" />
 
          <access origin="*" />
+         <access origin="cdvfile://*" />
     </widget>
