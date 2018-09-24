@@ -138,7 +138,7 @@
 
             //return;
             try {
-                my_media = new Media('ice_cream_truck.wav', 
+                my_media = new Media( cordova.file.applicationDirectory + 'ice_cream_truck.wav', 
                     function() {document.getElementById('status').innerHTML = "success"; }, 
                     function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + JSON.stringify(err); },
                     function(status) {document.getElementById('status').innerHTML = status; } );
@@ -154,7 +154,7 @@
             }
             document.getElementById('status3').innerHTML = "loaded";
             my_media.play();
-            document.getElementById('status4').innerHTML = "playing => " + 'ice_cream_truck.wav';
+            document.getElementById('status4').innerHTML = "playing => " + cordova.file.applicationDirectory + 'ice_cream_truck.wav';
         }
     }
     // The 'DOMContentLoaded' event fires before the 'deviceready'
