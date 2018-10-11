@@ -28,7 +28,7 @@ var app = {
     },
     //
     onLoad : function () {
-        alert("body loaded.");
+        //alert("body loaded.");
         // onDeviceReady();
     },
     //
@@ -50,13 +50,13 @@ var app = {
     },
     //
     onDeviceReady : function () {
-        alert("device ready.");
+        //alert("device ready.");
         document.getElementById('isCordovaApp').innerHTML  = app.isCordovaApp();
         document.getElementById('isKnownDevice').innerHTML = app.isKnownDevice(navigator.platform);
         document.getElementById('appVersion').innerHTML    = app.version;
         document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
 
-        if (isCordovaApp()) {
+        if (app.isCordovaApp()) {
             devicePlugin.deviceStuff('deviceStuff');
             //
             // Play some sound
