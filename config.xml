@@ -6,7 +6,7 @@
         versionCode = "10" >
         <!-- versionCode is optional and Android only -->
         <!-- https://build.phonegap.com/current-support -->
-        <preference name="phonegap-version" value="cli-6.0.0" />
+        <preference name="phonegap-version" value="cli-7.1.0" />
 
         <name>PGB Example Core Media</name>
         <description>PGB Example Core using the Cordova 'Media' plugin</description>
@@ -20,7 +20,6 @@
         <!-- PLUGINS PLUGINS -->
         <!-- device required so we can detect if we are using iOS -->
         <plugin name="cordova-plugin-device" spec="~2.0.2" />
-        <plugin name="cordova-plugin-media" spec="1.0.0" />
-        <plugin name="cordova-plugin-file" spec="4.0.0" />
+        <plugin name="cordova-plugin-media" spec="~5.0.2" />
 
     </widget>
