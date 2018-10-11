@@ -1,5 +1,5 @@
 var app = {
-    version : '1.1.0',
+    version : '1.0.0',
     audioFile : 'fanfare3.ogg', 
     wavFile   : 'ice_cream_truck.wav',
 
@@ -56,7 +56,7 @@ var app = {
         document.getElementById('appVersion').innerHTML    = app.version;
         document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
 
-        if (isCordovaApp(window.cordova)) {
+        if (isCordovaApp()) {
             devicePlugin.deviceStuff('deviceStuff');
             //
             // Play some sound
