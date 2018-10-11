@@ -1,5 +1,5 @@
 # pgb-example-core-media
-Phonegap Build Example using the core plugin "media"
+Phonegap Build example for core plugin Cordova 'Media' using `cli-6.0.0`
 
 This app uses the Cordova "device" & "media" plugins.
 
@@ -14,4 +14,10 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 Compatibility issues within Android require 
 
     <preference name="phonegap-version" value="cli-7.1.0" />
+
+Load order
+
+* Body
+* DOMContentLoaded
+* deviceready
 

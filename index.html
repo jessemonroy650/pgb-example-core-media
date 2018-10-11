@@ -28,12 +28,16 @@
     .p {background-color:hsl(270,25%,75%);} /* pastel-purple */
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="device.js"></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="file.js"></script> -->
+    <script type="text/javascript" charset="utf-8" src="media.js"></script>
 </head>
-<body onload="onLoad()" class=height100percent>
+<body onload="app.onLoad()" class=height100percent>
     <div id=header class="button button-block button-large">
         <img align=left src=favicon-48x48.png>
         PGB Core 'Media' plugin
-        <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
+        <button id=exitApp class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
     </div>
 
     <h3>App Version v<span id=appVersion></span></h3>
@@ -67,121 +71,9 @@
     </div>
 </body>
     <script type="text/javascript">
-
-function readFile(fileEntry) {
- 
-    fileEntry.file(function (file) {
-        var reader = new FileReader();
- 
-        reader.onloadend = function() {
-            document.getElementById('status0').innerHTML = "Successful file read: " + this.result;
-        };
- 
-    }, alert('onErrorReadFile'));
-}
-
-
-
-
-    var app = {
-        version : '1.0.0',
-    }
-    // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
-    function isCordovaApp(x) {
-        return (typeof x !== "undefined");
-    }
-    //
-    function isKnownDevice(obj) {
-        var validPGDevices = [
-            'armv7',
-            'iPad',
-            'iPhone',
-            'iPod'
-        ];
-        var i = 0, result = -1, answer = false;
-        for (i = 0; i < validPGDevices.length; i++){
-            // https://www.w3schools.com/jsref/jsref_search.asp
-            result = obj.search(validPGDevices[i]);
-            if (result != -1) {
-                answer = validPGDevices[i]; break;
-            }
-        }
-
-        return answer;
-    }
-    //
-    function deviceStuff() {
-        var deviceStuff = "" +
-        "<p class=r /><b>device.cordova:</b> "       + device.cordova +
-        "<p class=g /><b>device.model:</b> "         + device.model +
-        "<p class=b /><b>device.platform:</b> "      + device.platform +
-        "<p class=a id=uuid /><b>device.uuid:</b> "          + device.uuid +
-        "<p class=p /><b>device.version:</b> "       + device.version +
-        "<p class=r /><b>device.manufacturer:</b> "  + device.manufacturer +
-        "<p class=g /><b>device.isVirtual:</b> "     + device.isVirtual +
-        "<p class=b /><b>device.serial:</b> "        + device.serial;
- 
-        document.getElementById('deviceStuff').innerHTML = deviceStuff;
-    }
-    //
-    function onLoad() {
-        alert("body loaded.");
-        // onDeviceReady();
-    }
-    //
-    function onDOMContentLoaded() {
-        document.getElementById('navCodeName').innerHTML = navigator.appCodeName;
-        document.getElementById('navName').innerHTML     = navigator.appName;
-        document.getElementById('navVersion').innerHTML  = navigator.appVersion;
-        document.getElementById('navPlatform').innerHTML = navigator.platform;
-    }
-    //
-    function onDeviceReady() {
-        var audioFile = "fanfare3.ogg"; 
-        // 'ice_cream_truck.wav';
-
-        alert("device ready.");
-        document.getElementById('isCordovaApp').innerHTML  = isCordovaApp(window.cordova);
-        document.getElementById('isKnownDevice').innerHTML = isKnownDevice(navigator.platform);
-        document.getElementById('appVersion').innerHTML    = app.version;
-        document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
-
-        if (isCordovaApp(window.cordova)) {
-            deviceStuff();
-            //
-            // Play some sound
-            //
-            document.getElementById('status0').innerHTML = "loading";
-            document.getElementById('status1').innerHTML = typeof Media;
-            document.getElementById('status2').innerHTML = Object.is(Media, Media);
-
-            //return;
-            try {
-                my_media = new Media( cordova.file.applicationDirectory + audioFile, 
-                    function() {document.getElementById('status').innerHTML = "success"; }, 
-                    function(err) {document.getElementById('status').innerHTML = "error-fail<br>" + JSON.stringify(err); },
-                    function(status) {document.getElementById('status').innerHTML = status; } );
-            } catch (e) {
-                //junky = e instanceof ReferenceError;
-                junky = e.message + "<br>";
-                junky = junky + e.name + "<br>";
-                junky = junky + e.fileName + "<br>";
-                junky = junky + e.lineNumber + "<br>";
-                junky = junky + e.columnNumber + "<br>";
-                junky = junky + e.stack + "<br>";
-                document.getElementById('status2').innerHTML = junky
-            }
-
-            readFile(cordova.file.applicationDirectory + audioFile);
-
-            document.getElementById('status3').innerHTML = "loaded";
-            my_media.play();
-            document.getElementById('status4').innerHTML = "playing => " + cordova.file.applicationDirectory + audioFile;
-        }
-    }
     // The 'DOMContentLoaded' event fires before the 'deviceready'
-    document.addEventListener('DOMContentLoaded', onDOMContentLoaded, false);
+    document.addEventListener('DOMContentLoaded', app.onDOMContentLoaded, false);
     // Wait for PhoneGap to load
-    document.addEventListener("deviceready", onDeviceReady, false);
+    document.addEventListener('deviceready', app.onDeviceReady, false);
     </script>
 </html>
