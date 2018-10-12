@@ -10,11 +10,11 @@ This app uses the Cordova 'Device' & 'Media' plugins.
 
 Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#media) object this app will only use the *[play](https://www.npmjs.com/package/cordova-plugin-media#mediaplay)* method.
 
-This app is one of the most troublesome to date. It has multiple issues that will ensnare developers both beginning and experienced.
+This example app is one of the most troublesome to date. It has multiple issues that will ensnare developers both beginning and experienced. A summary of the issues is below in the section GOTCHA. A more complete description is available on the blog for this code release.
 
 ## Debugging Note
 
-The *load order* of webview based apps is as follows
+The *load order* and *event order* of webview based apps is as follows:
 
 1. Body
 2. DOMContentLoaded
@@ -29,7 +29,7 @@ All the following issues are discussed in depth in the blog
 + No warning when plugins do NOT load into the final bundle.
 + Android security changes require using at least cli-7.0.1
 + With cli-7.0.1, a new "builder" is used by default.
-+ The path to files within the APK bundle has changed. This is inline with Cordova CLI and Phonegap CLI.
++ The path to files within the APK bundle has changed. The path is inline with Cordova CLI and Phonegap CLI.
 + Error for plugin is given in *Phonegap Android Version* which is not the *Phonegap Build* or *Cordova* version and can be very confusing.
 + The "File" plugin is loaded  after 'Media' Plugin 3.0.1
 + `AndroidPersistentFileLocation` may or may not effect your app. It is not directly related to the 'File' plugin.
@@ -46,6 +46,8 @@ Compatibility issues within Android require the following `config.xml` setting.
 
 
 However, lowest workable version are:
+
     <preference name="phonegap-version" value="cli-7.0.1" />
     <plugin name="cordova-plugin-media" spec="~2.1.0" />
 
+...
