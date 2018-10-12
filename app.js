@@ -62,7 +62,7 @@ var app = {
             // Play some sound
             //
             mediaPlugin.init();
-            mediaPlugin.play(cordova.file.applicationDirectory + app.audioFile);
+            mediaPlugin.play(app.audioFile);
         }
     }
 }
