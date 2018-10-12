@@ -28,7 +28,7 @@ Compatibility issues within Android require
 
 Lowest workable version
     <preference name="phonegap-version" value="cli-7.0.1" />
-    <plugin name="cordova-plugin-media" spec="~2.2.0" />
+    <plugin name="cordova-plugin-media" spec="~2.1.0" />
 
 
 Load order
