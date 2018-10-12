@@ -1,7 +1,7 @@
 var app = {
     version : '1.0.0',
-    audioFile : 'fanfare3.ogg', 
-    wavFile   : 'ice_cream_truck.wav',
+    audioFile : '/assets/www/fanfare3.ogg', 
+    wavFile   : '/assets/www/ice_cream_truck.wav',
 
 
     // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
