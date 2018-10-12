@@ -1,7 +1,7 @@
 # pgb-example-core-media
 Phonegap Build example for core plugin Cordova 'Media' using `cli-7.1.0`
 
-This app uses the Cordova "device" & "media" plugins.
+This app uses the Cordova 'Device' & 'Media' plugins.
 
 * https://www.npmjs.com/package/cordova-plugin-device
 * https://www.npmjs.com/package/cordova-plugin-media
@@ -14,6 +14,8 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 + No warning when plugins do NOT load into the final bundle.
 + With cli-7.0.1 a new "builder" is used by default.
 + The path to files within the APK bundle has changed. It is inline with Cordova CLI and Phonegap CLI.
++ Error for plugin is given in //Phonegap Android Version// which is not the //Phonegap Build// and can be very confusing.
++ The "File" plugin is loaded  after 'Media' Plugin 3.0.1
 
 Compatibility issues within Android require 
 
