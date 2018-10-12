@@ -2,8 +2,6 @@ var app = {
     version : '1.0.0',
     audioFile : 'www/fanfare3.ogg', 
     wavFile   : 'www/ice_cream_truck.wav',
-    buddyFile : 'www/BuddyHolly-Everyday.ogg',
-
 
     // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
     isCordovaApp : function () {
