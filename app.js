@@ -54,7 +54,7 @@ var app = {
         document.getElementById('isCordovaApp').innerHTML  = app.isCordovaApp();
         document.getElementById('isKnownDevice').innerHTML = app.isKnownDevice(navigator.platform);
         document.getElementById('appVersion').innerHTML    = app.version;
-        document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
+        //document.getElementById('myDirectory').innerHTML   = cordova.file.applicationDirectory;
 
         if (app.isCordovaApp()) {
             devicePlugin.deviceStuff('deviceStuff');
