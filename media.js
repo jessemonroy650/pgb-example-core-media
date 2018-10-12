@@ -18,7 +18,7 @@ var mediaPlugin = {
         try {
             mediaPlugin.mediaObject = new Media(mediaPlugin.fileToPlay, 
                 mediaPlugin.playIt, 
-                function(err) { document.getElementById('status').innerHTML = "error-fail<br>" + JSON.stringify(err); },
+                function(err) { document.getElementById('status').innerHTML = "error-fail at new Media<br>" + JSON.stringify(err); },
                 function(status) { document.getElementById('status').innerHTML = status; }
             );
         } catch (e) {
