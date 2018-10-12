@@ -16,6 +16,7 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 + The path to files within the APK bundle has changed. It is inline with Cordova CLI and Phonegap CLI.
 + Error for plugin is given in //Phonegap Android Version// which is not the //Phonegap Build// and can be very confusing.
 + The "File" plugin is loaded  after 'Media' Plugin 3.0.1
++ AndroidPersistentFileLocation
 + compat
 + corrupt; uninstall
 
