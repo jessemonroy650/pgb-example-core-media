@@ -7,7 +7,7 @@
         <!-- versionCode is optional and Android only -->
         <!-- https://build.phonegap.com/current-support -->
         <preference name="phonegap-version" value="cli-7.1.0" />
-        <preference name='pgb-builder-version' value='2' />
+        <preference name='pgb-builder-version' value='1' />
 
         <name>PGB Example Core Media</name>
         <description>PGB Example Core using the Cordova 'Media' plugin</description>
