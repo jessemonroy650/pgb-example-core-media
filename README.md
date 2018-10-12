@@ -1,5 +1,5 @@
 # pgb-example-core-media
-Phonegap Build example for core plugin Cordova 'Media' using `cli-7.1.0`
+Phonegap Build example for core plugin Cordova 'Media' using `cli-7.0.1`
 
 This app uses the Cordova 'Device' & 'Media' plugins.
 
@@ -19,6 +19,7 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 + AndroidPersistentFileLocation
 + plugin-compat
 + corrupt; uninstall
++ Android System WebView maybe disabled
 + plugin 2.2.0 added Permision, but 2.1.0 worked
     * [CB-10455](https://issues.apache.org/jira/browse/CB-10455) android: Adding permission helper to remove cordova-android 5.0.0 constraint
 
@@ -28,7 +29,7 @@ Compatibility issues within Android require
     <plugin name="cordova-plugin-media" spec="~5.2.0" />
 
 
-Lowest workable version
+However, lowest workable version
     <preference name="phonegap-version" value="cli-7.0.1" />
     <plugin name="cordova-plugin-media" spec="~2.1.0" />
 

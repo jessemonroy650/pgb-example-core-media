@@ -38,6 +38,9 @@ var app = {
     //
     hook : function () {
         document.getElementById('exitApp').addEventListener('touchend', app.exitApp, false);
+        document.getElementById('playOther').addEventListener('touchend',
+            function () { mediaPlugin.play(cordova.file.applicationDirectory + app.wavFile); },
+            false);
     },
     //
     onDOMContentLoaded : function () {
