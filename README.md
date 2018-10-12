@@ -17,7 +17,7 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 + Error for plugin is given in //Phonegap Android Version// which is not the //Phonegap Build// and can be very confusing.
 + The "File" plugin is loaded  after 'Media' Plugin 3.0.1
 + AndroidPersistentFileLocation
-+ compat
++ plugin-compat
 + corrupt; uninstall
 
 Compatibility issues within Android require 
