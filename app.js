@@ -2,6 +2,7 @@ var app = {
     version : '1.0.0',
     audioFile : 'www/fanfare3.ogg', 
     wavFile   : 'www/ice_cream_truck.wav',
+    buddyFile : 'www/BuddyHolly-Everyday.ogg',
 
 
     // - https://videlais.com/2014/08/21/lessons-learned-from-detecting-apache-cordova/
@@ -40,6 +41,9 @@ var app = {
         document.getElementById('exitApp').addEventListener('touchend', app.exitApp, false);
         document.getElementById('playOther').addEventListener('touchend',
             function () { mediaPlugin.play(cordova.file.applicationDirectory + app.wavFile); },
+            false);
+        document.getElementById('playBuddy').addEventListener('touchend',
+            function () { mediaPlugin.play(cordova.file.applicationDirectory + app.buddyFile); },
             false);
     },
     //
