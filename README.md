@@ -19,11 +19,13 @@ Besides creating the [Media](https://www.npmjs.com/package/cordova-plugin-media#
 + AndroidPersistentFileLocation
 + plugin-compat
 + corrupt; uninstall
++ plugin 2.2.0 added Permision, but 2.1.0 worked
+    * [CB-10455](https://issues.apache.org/jira/browse/CB-10455) android: Adding permission helper to remove cordova-android 5.0.0 constraint
 
 Compatibility issues within Android require 
 
     <preference name="phonegap-version" value="cli-7.1.0" />
-    <plugin name="cordova-plugin-media" spec="~4.0.0" />
+    <plugin name="cordova-plugin-media" spec="~5.2.0" />
 
 
 Lowest workable version
